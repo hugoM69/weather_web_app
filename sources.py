@@ -2,10 +2,10 @@ import requests
 import pandas as pd
 from meteostat import Hourly, Daily
 from datetime import datetime, timedelta
-import streamlit as st
+
 
 OPENWEATHER_API_KEY = st.secrets["OPENWEATHER_API_KEY"]
-WEATHERAPI_KEY = st.secrets["WEATHERAPI_KEY"]
+AEMET_KEY = eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsb2xlcm9sb2xldGVAZ21haWwuY29tIiwianRpIjoiZDU5MDljNmEtOWU0ZC00YjkyLWEzMTEtMDc1NTc1YTU0YTgzIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE3NjY1MDkwNDIsInVzZXJJZCI6ImQ1OTA5YzZhLTllNGQtNGI5Mi1hMzExLTA3NTU3NWE1NGE4MyIsInJvbGUiOiIifQ.w_EPwdIpwWC7s104aJg4MrdCleOHSpqpu2gOQLKwfmQ
 TOMORROW_API_KEY = st.secrets["TOMORROW_API_KEY"]
 
 def openweather_forecast(lat, lon, mode):
@@ -94,3 +94,4 @@ def tomorrow_forecast(lat, lon, mode):
 
     df["source"] = "Tomorrow.io"
     return df
+
